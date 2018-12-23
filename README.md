@@ -12,6 +12,11 @@ std::cout << filet[0][0] << std::endl; // prints the value of the first row and 
 filet[0][0] = "fish!" // sets the value of the first row and first column.
 filet.push_back({"woo", "a", "new", "row!"});
 
+// do a loop de loop de loop
+for (std::vector<std::string> &row: filet) {
+    std::cout << row[0] << std::endl;
+}
+
 std::ofstream out("new.csv");
 filet.write(&out);
 ```
