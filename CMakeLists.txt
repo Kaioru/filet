@@ -3,4 +3,10 @@ project(filet)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(filet main.cpp)
+file(GLOB src
+    "*.h"
+    "*.cpp"
+)
+
+file(COPY test.csv DESTINATION "${CMAKE_BINARY_DIR}")
+add_executable(filet ${src})
