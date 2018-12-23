@@ -5,13 +5,14 @@
 #include <vector>
 
 class Filet : public std::vector<std::vector<std::string>> {
-    std::istream *istream;
 public:
-    Filet(std::istream *istream);
+    Filet();
 
-    void read();
+    Filet(std::istream *istream, std::string delim = ",");
 
-    void write(std::ofstream *ostream);
+    void read(std::istream *istream, std::string delim = ",");
+
+    void write(std::ofstream *ostream, std::string delim = ",");
 };
 
 #endif //FILET_FILET_H
