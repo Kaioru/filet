@@ -68,7 +68,6 @@ void writeToFile2() {
 }
 
 void readWriteFile2() {
-
     std::ifstream in("product2.csv");
     if (!in) std::cout << "Failed to load file" << std::endl;
     Filet filet = Filet(&in, ";");
