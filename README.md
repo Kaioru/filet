@@ -19,6 +19,6 @@ filet.write(&out);
 std::ifstream in("example.csv");
 Filet filet = Filet(&in, ","); // custom delimiters!!
 
-std::ofstream out(".csv");
+std::ofstream out("newDeliminatorer.csv");
 filet.write(&out, ";"); // revolutionary innovation!1
 ```
