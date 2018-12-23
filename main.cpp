@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <iomanip>
 #include "filet.h"
 
 void writeToFile1() {
@@ -29,7 +30,9 @@ void readFromFile1() {
         std::cout << row[0] << "\t\t"
                   << row[1] << "\t"
                   << row[2] << "\t"
-                  << std::stod(row[1]) * std::stod(row[2]) << "\t"
+                  << std::setprecision(2)
+                  << std::fixed
+                  << std::stod(row[1]) * std::stod(row[2])
                   << std::endl;
     }
 }
@@ -41,7 +44,9 @@ void readWriteFile1() {
 
     for (std::vector<std::string> &row: filet) {
         std::ostringstream strs;
-        strs << std::stod(row[1]) * std::stod(row[2]);
+        strs << std::setprecision(2)
+             << std::fixed
+             << std::stod(row[1]) * std::stod(row[2]);
         std::string str = strs.str();
         row.push_back(str);
     }
@@ -70,7 +75,9 @@ void readWriteFile2() {
 
     for (std::vector<std::string> &row: filet) {
         std::ostringstream strs;
-        strs << std::stod(row[1]) * std::stod(row[2]);
+        strs << std::setprecision(2)
+             << std::fixed
+             << std::stod(row[1]) * std::stod(row[2]);
         std::string str = strs.str();
         row.push_back(str);
     }

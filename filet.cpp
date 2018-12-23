@@ -21,7 +21,7 @@ void Filet::read(std::istream *istream, std::string delim) {
 
         while ((pos = line.find(delim)) != std::string::npos) {
             row.push_back(line.substr(0, pos));
-            line.erase(0, pos + 1);
+            line.erase(0, pos + delim.size());
         }
 
         row.push_back(line);
@@ -38,10 +38,10 @@ void Filet::write(std::ofstream *ostream, std::string delim) {
             output += value + delim;
         }
 
-        output = output.substr(0, output.size() - 1);
+        output = output.substr(0, output.size() - delim.size());
         output += "\n";
     }
-    output = output.substr(0, output.size() - 2);
+    output = output.substr(0, output.size() - 1);
 
     *ostream << output;
 }
