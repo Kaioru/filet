@@ -8,5 +8,4 @@ file(GLOB src
     "*.cpp"
 )
 
-file(COPY test.csv DESTINATION "${CMAKE_BINARY_DIR}")
 add_executable(filet ${src})
